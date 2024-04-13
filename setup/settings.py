@@ -41,7 +41,7 @@ CSRF_COOKIE_SECURE = False  # Defina como True se estiver usando HTTPS
 
 # hello_django/settings.py
 
-APP_NAME = os.environ.get("FLY_APP_NAME")  # Application definition
+#APP_NAME = os.environ.get("FLY_APP_NAME")  # Application definition
 
 INSTALLED_APPS = [
     'django.contrib.admin',
