@@ -1,1 +1,2 @@
-web: gunicorn todos.wsgi
+web: gunicorn todos.wsgi --log-file -
+
