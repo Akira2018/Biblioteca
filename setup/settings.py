@@ -1,6 +1,6 @@
 import os
 from pathlib import Path
-import docker
+import django_heroku
 
 # Configuração da conexão com o Docker Engine
 #DOCKER_BASE_URL = 'unix://var/run/docker.sock'  # ou 'tcp://127.0.0.1:2375' para conexão remota
@@ -27,13 +27,6 @@ DEBUG = True
 #SECURE_SSL_REDIRECT
 
 ALLOWED_HOSTS = ['*']
-
-#ALLOWED_HOSTS = [
-#    '192.168.0.203',
-#    '192.168.0.0/24',
-#    '127.0.0.1',
-#    'localhost',
-#]
 
 ADMIN_URL = 'admin/'  # Defina o URL do painel de administração
 LOGIN_URL = '/accounts/login/'
@@ -73,7 +66,7 @@ CORS_ALLOWED_ORIGINS = [
     'https://projbiblioteca2024.fly.dev'
 ]
 
-CSRF_TRUSTED_ORIGINS = ['https://projbiblioteca2024.fly.dev']
+CSRF_TRUSTED_ORIGINS = ['https://biblioteca01-3a799f4d44a2.herokuapp.com']
 
 CORS_ALLOW_METHODS = [
     'GET',
@@ -195,3 +188,5 @@ SQLITE3_URL = "/venv/"
 # https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+django_heroku.settings(locals())
