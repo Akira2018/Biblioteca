@@ -43,8 +43,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    #'corsheaders',  # Note a vírgula aqui
-    #'crispy_forms',
+    'corsheaders',  # Note a vírgula aqui
     'todos',
 ]
 
@@ -113,7 +112,7 @@ WSGI_APPLICATION = 'setup.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'Cadastrotest.sqlite3',
+        'NAME': BASE_DIR / 'Cadastro.sqlite3',
     }
 }
 
@@ -122,7 +121,7 @@ DATABASES = {
 
 # Configuração do banco de dados para ambiente local (Windows)
 if os.name == 'nt':
-    DATABASE_PATH = os.path.join(BASE_DIR, 'Cadastrotest.sqlite3')
+    DATABASE_PATH = os.path.join(BASE_DIR, 'Cadastro.sqlite3')
 # Configuração do banco de dados para ambiente de produção (fly.io)
 else:
     DATABASE_PATH = "/mnt/db-prod.db"
