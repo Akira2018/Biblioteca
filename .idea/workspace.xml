@@ -5,14 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="5fdfa572-1374-435d-91fd-ab8e981eca8e" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.dockerignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitattributes" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/VendaOnline.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/VendaOnline.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Biblioteca.bat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Biblioteca" beforeDir="false" afterPath="$PROJECT_DIR$/Biblioteca" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Biblioteca/.dockerignore" beforeDir="false" afterPath="$PROJECT_DIR$/Biblioteca/.dockerignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Biblioteca/.gitattributes" beforeDir="false" afterPath="$PROJECT_DIR$/Biblioteca/.gitattributes" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Biblioteca/.idea/VendaOnline.iml" beforeDir="false" afterPath="$PROJECT_DIR$/Biblioteca/.idea/VendaOnline.iml" afterDir="false" />
@@ -3430,11 +3424,6 @@
       <change beforePath="$PROJECT_DIR$/Biblioteca/venv/Lib/site-packages/whitenoise/runserver_nostatic/management/commands/runserver.py" beforeDir="false" afterPath="$PROJECT_DIR$/Biblioteca/venv/Lib/site-packages/whitenoise/runserver_nostatic/management/commands/runserver.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Biblioteca/venv/Lib/site-packages/whitenoise/storage.py" beforeDir="false" afterPath="$PROJECT_DIR$/Biblioteca/venv/Lib/site-packages/whitenoise/storage.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Biblioteca/venv/Lib/site-packages/whitenoise/string_utils.py" beforeDir="false" afterPath="$PROJECT_DIR$/Biblioteca/venv/Lib/site-packages/whitenoise/string_utils.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Cadastrotest.sqlite3" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Procfile" beforeDir="false" afterPath="$PROJECT_DIR$/Procfile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Teste IP Internet.bat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/setup/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/setup/settings.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
