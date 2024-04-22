@@ -1,2 +1,2 @@
-web: gunicorn todos.wsgi
+web: gunicorn setup.wsgi
 
