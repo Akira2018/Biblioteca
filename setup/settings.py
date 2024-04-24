@@ -183,6 +183,7 @@ MEDIA_URL = "/media/"
 SQLITE3_ROOT = os.path.join(BASE_DIR, 'sqlite3')
 SQLITE3_URL = "/venv/"
 
+STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field

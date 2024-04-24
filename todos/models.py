@@ -12,6 +12,8 @@ class Autores(models.Model):
 
     class Meta:
         ordering = ['nome_autor']
+        verbose_name = "Cadastro de Autor"
+        verbose_name_plural = "Cadastro de Autores"
 
 class Livros(models.Model):
     livros_id = models.AutoField(primary_key=True)
@@ -38,6 +40,8 @@ class Livros(models.Model):
 
     class Meta:
         ordering = ['titulo']
+        verbose_name = "Cadastro de Livros"
+        verbose_name_plural = "Cadastro de Livros"
 
 class Videos(models.Model):
     videos_id = models.AutoField(primary_key=True)
@@ -53,6 +57,8 @@ class Videos(models.Model):
 
     class Meta:
         ordering = ['nome_video']
+        verbose_name = "Cadastro de Videos"
+        verbose_name_plural = "Cadastro de Videos"
 
 class Usuarios(models.Model):
     usuarios_id = models.AutoField(primary_key=True)
@@ -67,6 +73,8 @@ class Usuarios(models.Model):
 
     class Meta:
         ordering = ['nome_usuario']
+        verbose_name = "Cadastro de Usuários"
+        verbose_name_plural = "Cadastro de Usuários"
 
 class EmprestimoLivro(models.Model):
     emprestimo_id = models.AutoField(primary_key=True)
@@ -99,7 +107,8 @@ class EmprestimoLivro(models.Model):
 
     class Meta:
         ordering = ['data_emprestimo']
-from .models import Usuarios, Videos
+        verbose_name = "Cadastrar Empréstimo de Livros"
+        verbose_name_plural = "Cadastrar Empréstimo de Livros"
 
 class EmprestimoVideo(models.Model):
     emprestimo_id = models.AutoField(primary_key=True)
@@ -133,6 +142,8 @@ class EmprestimoVideo(models.Model):
 
     class Meta:
         ordering = ['data_emprestimo']
+        verbose_name = "Cadastrar Empréstimo de Videos"
+        verbose_name_plural = "Cadastrar Empréstimo de Videos"
 
     def __str__(self):
         if self.usuarios_id and self.videos_id:

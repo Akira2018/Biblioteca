@@ -6,26 +6,41 @@ from .models import Autores, Livros, Videos, Usuarios, EmprestimoLivro, Empresti
 
 @admin.register(Autores)
 class AutoresAdmin(admin.ModelAdmin):
+    # Definindo a exibição do nome no aplicativo Django Admin
+    verbose_name = "Cadastro de Autores"
+    verbose_name_plural = "Cadastro de Autores"
     search_fields = ['nome_autor']
     list_display = ['nome_autor']
 
 @admin.register(Livros)
 class LivrosAdmin(admin.ModelAdmin):
+    # Definindo a exibição do nome no aplicativo Django Admin
+    verbose_name = "Cadastro de Livros"
+    verbose_name_plural = "Cadastro de Livros"
     search_fields = ('titulo', 'qtlivros', 'estante')
     list_display = ('titulo', 'qtlivros', 'estante')
 
 @admin.register(Videos)
 class VideosAdmin(admin.ModelAdmin):
+    # Definindo a exibição do nome no aplicativo Django Admin
+    verbose_name = "Cadastro de Videos"
+    verbose_name_plural = "Cadastro de Videos"
     search_fields = ['nome_video', 'qtvideos', 'colecao']
     list_display = ['nome_video', 'qtvideos', 'colecao']
 
 @admin.register(Usuarios)
 class UsuariosAdmin(admin.ModelAdmin):
+    # Definindo a exibição do nome no aplicativo Django Admin
+    verbose_name = "Cadastro de Usuários"
+    verbose_name_plural = "Cadastro de Usuários"
     search_fields = ['nome_usuario', 'numeroRA', 'situacaoaluno']
     list_display = ['nome_usuario', 'numeroRA', 'situacaoaluno']
 
 @admin.register(EmprestimoLivro)
 class EmprestimoLivroAdmin(admin.ModelAdmin):
+    # Definindo a exibição do nome no aplicativo Django Admin
+    verbose_name = "Cadastro de Empréstimo de Livros"
+    verbose_name_plural = "Cadastro de Empréstimo de Livros"
     search_fields = ['nome_usuario', 'livros_id__titulo', 'data_emprestimo', 'data_devolucao']
     list_display = ['usuarios_nome','get_tipo_item','livro_titulo', 'formatted_data_emprestimo', 'formatted_data_devolucao']
 
@@ -68,6 +83,9 @@ class EmprestimoLivroAdmin(admin.ModelAdmin):
 
 @admin.register(EmprestimoVideo)
 class EmprestimoVideoAdmin(admin.ModelAdmin):
+    # Definindo a exibição do nome no aplicativo Django Admin
+    verbose_name = "Cadastro de Empréstimo de Videos"
+    verbose_name_plural = "Cadastro de Empréstimo de Videos"
     list_display = ('usuario_nome', 'formatted_data_emprestimo', 'formatted_data_devolucao', 'video_nome')
     list_filter = ('data_emprestimo', 'data_devolucao', 'usuarios_id')
     search_fields = ('usuarios_id__nome_usuario', 'videos_id__nome_video')
