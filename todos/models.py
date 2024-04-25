@@ -5,7 +5,7 @@ from django.shortcuts import reverse
 
 class Autores(models.Model):
     autor_id = models.AutoField(primary_key=True)
-    nome_autor = models.CharField(max_length=100, unique=True)
+    nome_autor = models.CharField(max_length=100, unique=True, verbose_name='Nome do Autor ')
 
     def __str__(self):
         return self.nome_autor
@@ -17,23 +17,24 @@ class Autores(models.Model):
 
 class Livros(models.Model):
     livros_id = models.AutoField(primary_key=True)
-    autor_id = models.ForeignKey(Autores, on_delete=models.CASCADE)
-    titulo = models.CharField(max_length=100, verbose_name='Titulo do livro')
-    qtlivros = models.BigIntegerField()
-    estante = models.CharField(max_length=100)
+    autor_id = models.ForeignKey(Autores, on_delete=models.CASCADE, verbose_name='Nome do autor ')
+    titulo = models.CharField(max_length=100, verbose_name='Título do livro: ')
+    qtlivros = models.BigIntegerField(verbose_name='Quantidade de Livros: ')
+    estante = models.CharField(max_length=100, verbose_name='Estante de Arquivo: ')
 
     TIPOSTATUS_CHOICES = [
         ('Aluno', 'Aluno'),
         ('Professor', 'Professor'),
         ('Outros', 'Outros')
     ]
-    tipostatus = models.CharField(max_length=30, choices=TIPOSTATUS_CHOICES, default='Aluno', verbose_name='Status do livro')
+    tipostatus = models.CharField(max_length=30, choices=TIPOSTATUS_CHOICES, default='Aluno', verbose_name='Status do aluno: ')
 
-    edicao = models.CharField(max_length=100, blank=True)  # tornando o campo opcional
-    assunto = models.CharField(max_length=100, blank=True)  # tornando o campo opcional
+    edicao = models.CharField(max_length=100, blank=True, verbose_name='Edição: ')  # tornando o campo opcional
+    assunto = models.CharField(max_length=100, blank=True, verbose_name='Assunto: ')  # tornando o campo opcional
     data_publicacao = models.DateField()
-    observacao = models.CharField(max_length=100, blank=True)  # tornando o campo opcional
-    data_cadastro = models.DateField(default=timezone.now)  # Usando timezone.now como padrão
+    observacao = models.CharField(max_length=100, blank=True, verbose_name='Observação: ')  # tornando o campo opcional
+    data_cadastro = models.DateField(default=timezone.now, verbose_name='Data do Cadastro: ')  # Usando timezone.now como padrão
+
 
     def __str__(self):
         return self.titulo
@@ -45,12 +46,12 @@ class Livros(models.Model):
 
 class Videos(models.Model):
     videos_id = models.AutoField(primary_key=True)
-    colecao = models.CharField(max_length=100)
-    nome_video = models.CharField(max_length=100, verbose_name='Nome do Video ')
-    qtvideos = models.BigIntegerField()
-    estante = models.CharField(max_length=50, blank=True)  # tornando o campo opcional
-    observacao = models.CharField(max_length=100, blank=True)  # tornando o campo opcional
-    data_cadastro = models.DateField(default=timezone.now)  # Usando timezone.now como padrão
+    colecao = models.CharField(max_length=100, verbose_name='Coleção ')
+    nome_video = models.CharField(max_length=100, verbose_name='Nome do Video')
+    qtvideos = models.BigIntegerField(verbose_name='Quantidade de Videos: ')
+    estante = models.CharField(max_length=50, blank=True, verbose_name='Nome da estante:')  # tornando o campo opcional
+    observacao = models.CharField(max_length=100, blank=True, verbose_name='Observação ')  # tornando o campo opcional
+    data_cadastro = models.DateField(default=timezone.now, verbose_name='Data do Cadastro ')  # Usando timezone.now como padrão
 
     def __str__(self):
         return self.nome_video
@@ -62,11 +63,11 @@ class Videos(models.Model):
 
 class Usuarios(models.Model):
     usuarios_id = models.AutoField(primary_key=True)
-    nome_usuario = models.CharField(max_length=100)
-    numeroRA = models.CharField(max_length=30)
-    situacaoaluno = models.CharField(max_length=30)
-    serie = models.CharField(max_length=20, unique=True)
-    observacao = models.CharField(max_length=200, blank=True)  # tornando o campo opcional
+    nome_usuario = models.CharField(max_length=100, verbose_name='Nome do Usuário')
+    numeroRA = models.CharField(max_length=30, verbose_name='Número do RA')
+    situacaoaluno = models.CharField(max_length=30, verbose_name='Situação do Aluno:')
+    serie = models.CharField(max_length=20, unique=True, verbose_name='Série do Aluno:')
+    observacao = models.CharField(max_length=200, blank=True, verbose_name='Observação')  # tornando o campo opcional
 
     def __str__(self):
         return self.nome_usuario
@@ -78,11 +79,10 @@ class Usuarios(models.Model):
 
 class EmprestimoLivro(models.Model):
     emprestimo_id = models.AutoField(primary_key=True)
-    data_emprestimo = models.DateTimeField(default=timezone.now)
-    data_devolucao = models.DateTimeField(blank=True, null=True)
-    usuarios_id = models.ForeignKey('Usuarios', on_delete=models.CASCADE)
-    livros_id = models.ForeignKey('Livros', on_delete=models.CASCADE, related_name='emprestimos_livro', blank=True,
-                                  null=True)
+    data_emprestimo = models.DateTimeField(default=timezone.now, verbose_name='Data do Empréstimo: ')
+    data_devolucao = models.DateTimeField(blank=True, null=True, verbose_name='Data da Devolução: ')
+    usuarios_id = models.ForeignKey('Usuarios', on_delete=models.CASCADE, verbose_name='Nome do usuário: ')
+    livros_id = models.ForeignKey('Livros', on_delete=models.CASCADE, related_name='emprestimos_livro', blank=True, null=True, verbose_name='Nome do Livro: ')
 
     def save(self, *args, **kwargs):
         if self._state.adding:
@@ -112,10 +112,10 @@ class EmprestimoLivro(models.Model):
 
 class EmprestimoVideo(models.Model):
     emprestimo_id = models.AutoField(primary_key=True)
-    data_emprestimo = models.DateTimeField(default=timezone.now)
-    data_devolucao = models.DateTimeField(blank=True, null=True)
-    usuarios_id = models.ForeignKey(Usuarios, on_delete=models.CASCADE)
-    videos_id = models.ForeignKey(Videos, on_delete=models.CASCADE, related_name='emprestimos_video', blank=True, null=True)
+    data_emprestimo = models.DateTimeField(default=timezone.now, verbose_name='Data do Empréstimo: ')
+    data_devolucao = models.DateTimeField(blank=True, null=True, verbose_name='Data da Devolução: ')
+    usuarios_id = models.ForeignKey(Usuarios, on_delete=models.CASCADE, verbose_name='Nome do Usuário: ')
+    videos_id = models.ForeignKey(Videos, on_delete=models.CASCADE, related_name='emprestimos_video', blank=True, null=True, verbose_name='Nome do Video: ')
 
     def save(self, *args, **kwargs):
         if self.pk is None:
