@@ -63,13 +63,11 @@
         <div class="image-container">
             <!-- Adicione o caminho correto para a sua imagem -->
             <img src="todos\images\ImagemBiblioteca.jpg" alt=" ">
-            <img src="\venv\images\imagemBiblioteca.jpg" alt=" ">
-            <img src="\static\images\imagemBiblioteca.jpg" alt=" ">
+            <img src="/images/imagemBiblioteca.jpg" alt=" ">
+            <img src="/imagemBiblioteca.jpg" alt=" ">
         </div>
-
         <p>Você será redirecionado automaticamente em breve...</p>
     </div>
-
     <!-- Script para redirecionamento automático -->
     <script>
         setTimeout(function() {
@@ -79,7 +77,6 @@
     <form method="post">
         {% csrf_token %}
         {{ form.as_p }}
-    <button type="submit">Enviar</button>
     </form>
 </body>
 </html>
