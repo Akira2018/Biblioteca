@@ -177,8 +177,9 @@ STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]
 STATIC_URL = '/static/'
 
 # Arquivos de Mídia (Imagens)
-MEDIA_ROOT = 'D:\\projbiblioteca\\media'
-MEDIA_URL = "/media/"
+
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+MEDIA_URL = '/media/'
 
 SQLITE3_ROOT = os.path.join(BASE_DIR, 'sqlite3')
 SQLITE3_URL = "/venv/"

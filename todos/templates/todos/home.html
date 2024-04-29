@@ -62,9 +62,12 @@
         <!-- Container para a imagem -->
         <div class="image-container">
             <!-- Adicione o caminho correto para a sua imagem -->
-            <img src="/todos/images/ImagemBiblioteca.jpg" alt=" ">
-            <img src="/img/imagemBiblioteca.jpg" alt=" ">
-            <img src="/media/imagemBiblioteca.jpg" alt=" ">
+            <!-- <img src="/todos/images/ImagemBiblioteca.jpg" alt=" "> -->
+            <!-- <img src="\\img\\imagemBiblioteca.jpg" alt=" "> -->
+            <!-- <img src="static/media/imagemBiblioteca.jpg" alt=" "> -->
+            {% load static %}
+            <img src="{{ MEDIA_URL }}/media/imagemBiblioteca.jpg" alt="Livros">
+
         </div>
         <p>Você será redirecionado automaticamente em breve...</p>
     </div>
